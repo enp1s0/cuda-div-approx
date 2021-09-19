@@ -109,7 +109,8 @@ void test(
 	for (int e = exp_min; e <= exp_max; e++) {
 		for (unsigned i = 0; i < num_mantissa_split; i++) {
 			const auto array_index = (e - exp_min) * num_mantissa_split + i;
-			std::printf("%e,%e,%e,%e\n",
+			std::printf("%d,%e,%e,%e,%e\n",
+					e,
 					b_array.get()[array_index],
 					approx_result.get()[array_index],
 					full_range_approx_result.get()[array_index],
@@ -120,5 +121,5 @@ void test(
 }
 
 int main() {
-	test(-126, 126, 10);
+	test(-126, 127, 10);
 }
